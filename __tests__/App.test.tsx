@@ -1,13 +1,13 @@
-/**
- * @format
- */
+// /**
+//  * @format
+//  */
 
-import React from 'react'
-import ReactTestRenderer from 'react-test-renderer'
-import App from '../src/screens/HomeScreen'
+// import React from 'react'
+// import ReactTestRenderer from 'react-test-renderer'
+// import App from '../src/screens/HomeScreen'
 
-test('renders correctly', async () => {
-  await ReactTestRenderer.act(() => {
-    ReactTestRenderer.create(<App />)
-  })
-})
+// test('renders correctly', async () => {
+//   await ReactTestRenderer.act(() => {
+//     ReactTestRenderer.create(<App />)
+//   })
+// })

@@ -1,9 +1,8 @@
-/* eslint-disable react/no-unstable-nested-components */
 import { createDrawerNavigator, DrawerNavigationOptions } from '@react-navigation/drawer'
 
 import { StackNavigatorApp } from './stack'
-import { HomeScreen } from '../screens/Home'
-import { CustomDrawer } from '../components/CustomDrawer'
+import { HomeScreen } from '../screens/Home/Index'
+import { CustomDrawer } from '../components/CustomDrawer/Index'
 import { Image } from 'react-native'
 
 const Drawer = createDrawerNavigator()

@@ -3,7 +3,7 @@ import { Image, Text, View } from 'react-native'
 import { DrawerContentComponentProps } from '@react-navigation/drawer'
 import { DrawerItemList } from '@react-navigation/drawer'
 
-import { styles } from './CustomDrawer.style'
+import { styles } from './CustomDrawer.styles'
 
 type CustomDrawerProps = DrawerContentComponentProps
 
@@ -12,7 +12,7 @@ export function CustomDrawer ({ ...rest }: CustomDrawerProps) {
     <View style={styles.container}>
       <View style={styles.header}>
         <Image
-          source={require('../assets/avatar.png')}
+          source={require('../../assets/avatar.png')}
           style={styles.avatar}
         />
 

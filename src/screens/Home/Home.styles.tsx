@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-end',
     paddingBottom: 80,
-    backgroundColor: '#DDDDDD',
+    backgroundColor: '#F4F4F7',
   },
   primaryButton: {
     backgroundColor: '#00496F',
@@ -32,7 +32,7 @@ export const styles = StyleSheet.create({
     backgroundColor: '#FFFEFF',
     paddingVertical: 16,
     borderTopWidth: 1,
-    borderTopColor: '#DDDDDD',
+    borderTopColor: '#F4F4F7',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
