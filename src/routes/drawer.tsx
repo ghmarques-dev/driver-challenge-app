@@ -2,10 +2,12 @@ import { createDrawerNavigator, DrawerNavigationOptions } from '@react-navigatio
 
 import { StackNavigatorApp } from './stack'
 import { HomeScreen } from '../screens/Home/Index'
-import { CustomDrawer } from '../components/CustomDrawer/Index'
+import { CustomDrawer } from '../components/shared/CustomDrawer/Index'
 import { Image } from 'react-native'
 
-const Drawer = createDrawerNavigator()
+import { RootStackParamList } from '../types/navigation'
+
+const Drawer = createDrawerNavigator<RootStackParamList>()
 
 const screenOptionsStyles: DrawerNavigationOptions  = {
   drawerStyle: { backgroundColor: 'black', width: '80%' },
@@ -29,20 +31,21 @@ export function DrawerNavigatorApp() {
       drawerContent={(props) => <CustomDrawer {...props} />}
     >
       <Drawer.Screen
-        name="Início"
+        name="Home"
         component={HomeScreen}
         options={{
+          title: 'Início',
           drawerIcon: ({ size }) =>
-            <Image width={size} height={size} source={require('../assets/house.png')} />,
+            <Image width={size} height={size} source={require('../assets/images/house.png')} />,
         }}
       />
 
       <Drawer.Screen
-        name="Serviços"
+        name="Services"
         options={{
           headerShown: false,
           drawerIcon: ({ size }) =>
-            <Image width={size} height={size} source={require('../assets/services-white.png')} />,
+            <Image width={size} height={size} source={require('../assets/images/services-white.png')} />,
          }}
         component={StackNavigatorApp}
       />

@@ -12,7 +12,7 @@ export function CustomDrawer ({ ...rest }: CustomDrawerProps) {
     <View style={styles.container}>
       <View style={styles.header}>
         <Image
-          source={require('../../assets/avatar.png')}
+          source={require('../../../assets/images/avatar.png')}
           style={styles.avatar}
         />
 

@@ -9,7 +9,7 @@ type ServiceItemProps = Omit<ServicesProvided, 'id'>
 export function ServiceItem({ title, description }: ServiceItemProps) {
   return (
     <View style={styles.container}>
-      <Image source={require('../../../../assets/car.png')} style={styles.image} />
+      <Image source={require('../../../../assets/images/car.png')} style={styles.image} />
 
       <View style={styles.textContainer}>
         <Text style={styles.title}>{title}</Text>

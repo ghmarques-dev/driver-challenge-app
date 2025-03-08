@@ -1,17 +1,34 @@
+import { useEffect, useState } from 'react'
 import {
-  SafeAreaView, Text, TouchableOpacity, View,
+  Image,
+  SafeAreaView,
+  Text,
+  TouchableOpacity,
+  View,
 } from 'react-native'
 
 import { useNavigation } from '@react-navigation/native'
-
-import { styles } from './Home.styles'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
+
+import { NetworkStatus } from '../../constants/network-status'
+
 import { RootStackParamList } from '../../types/navigation'
+import { styles } from './Home.styles'
+import { checkConnection } from '../../utils/fack-check-connection'
+import { StatusButton } from '../../components/pages/home/StatusButton/StatusButton'
 
 type HomeScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'Home'>
 
 export function HomeScreen() {
   const navigation = useNavigation<HomeScreenNavigationProp>()
+  const [connectionStatus, setConnectionStatus] =
+    useState<NetworkStatus>(NetworkStatus.LOADING)
+
+  useEffect(() => {
+    const status = checkConnection({ mathValue: 0.50 })
+
+    setConnectionStatus(status)
+  }, [])
 
   return (
     <SafeAreaView style={styles.container}>
@@ -23,17 +40,16 @@ export function HomeScreen() {
         </TouchableOpacity>
       </View>
 
-      {/* TODO => Encaminha para a pagina de serviços  */}
       <View style={styles.footer}>
-        <TouchableOpacity onPress={() =>
-          navigation.navigate('Services')
-        }>
+        <TouchableOpacity
+          style={styles.servicesButton}
+          onPress={() => navigation.navigate('Services')}
+        >
+          <Image source={require('../../assets/images/services-black.png')} />
           <Text style={styles.footerText}>Serviços</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.statusButton}>
-          <Text style={styles.statusButtonText}>Você está ONLINE</Text>
-        </TouchableOpacity>
+        <StatusButton connectionStatus={connectionStatus} />
       </View>
     </SafeAreaView>
   )

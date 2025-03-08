@@ -40,18 +40,15 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 28,
   },
   footerText: {
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: 'bold',
+    textTransform: 'uppercase',
   },
-  statusButton: {
-    backgroundColor: '#279700',
-    color: '#FFFFFF',
-    borderRadius: 10,
-    paddingVertical: 20,
-    paddingHorizontal: 70,
+  servicesButton: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: 6,
   },
-  statusButtonText: {
-    color: '#FFFFFF',
-    fontSize: 16,
-  },
+
 })

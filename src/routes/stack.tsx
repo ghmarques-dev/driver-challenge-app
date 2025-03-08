@@ -1,19 +1,19 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
 import { ServicesScreen } from '../screens/Services/Index'
-import { CustomBackButton } from '../components/CustomBackButton/Index'
+import { CustomBackButton } from '../components/shared/CustomBackButton/Index'
 
-export type StackParamList = {
-  Serviços: undefined
+type StackList = {
+  toServices: undefined
 }
 
-const Stack = createNativeStackNavigator<StackParamList>()
+const Stack = createNativeStackNavigator<StackList>()
 
 export function StackNavigatorApp() {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Serviços"
+        name="toServices"
         component={ServicesScreen}
         options={{
           headerTitle: 'Voltar',
