@@ -1,7 +1,6 @@
 module.exports = {
   root: true,
   extends: '@react-native',
-
   rules: {
     semi: ['off'],
     quotes: ['error', 'single'],
@@ -12,4 +11,10 @@ module.exports = {
       { ignoreCase: true, ignoreDeclarationSort: true },
     ],
   },
+  overrides: [
+    {
+      files: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
+      extends: ['plugin:testing-library/react'],
+    },
+  ],
 }
